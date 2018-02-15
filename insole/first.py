@@ -1,6 +1,6 @@
-# Heel R naar analog input
-# Com 1 naar 3.3V
-# Tussen Heel R en Analog input: resistor naar ground
+# Heel R naar analog input (pin 39)
+# Com 1 naar 3.3V (pin 3)
+# Tussen Heel R en Analog input: resistor naar ground (pin 1)
 # Dan tzelfde voor elke connectie, en elk een aparte res en aparte analog input
 
 
