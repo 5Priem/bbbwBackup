@@ -1,3 +1,9 @@
+# Heel R naar analog input
+# Com 1 naar 3.3V
+# Tussen Heel R en Analog input: resistor naar ground
+# Dan tzelfde voor elke connectie, en elk een aparte res en aparte analog input
+
+
 import Adafruit_BBIO.ADC as adc
 import time
 adc.setup()
