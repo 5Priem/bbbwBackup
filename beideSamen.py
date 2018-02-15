@@ -1,3 +1,15 @@
+# Servo: 
+# + in 7
+# gnd in 2
+# analog in 14
+
+# Insole: 
+# Heel R naar analog input (pin 39)
+# Com 1 naar 3.3V (pin 3)
+# Tussen Heel R en Analog input: resistor naar ground (pin 1)
+# Dan tzelfde voor elke connectie, en elk een aparte res en aparte analog input
+
+
 import Adafruit_BBIO.ADC as adc
 import Adafruit_BBIO.PWM as pwm
 import time
