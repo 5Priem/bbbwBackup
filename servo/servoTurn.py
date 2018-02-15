@@ -1,3 +1,7 @@
+# + in 7
+# gnd in 2
+# analog in 14
+
 import Adafruit_BBIO.PWM as pwm
 import time
 
