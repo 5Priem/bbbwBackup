@@ -1,5 +1,19 @@
 #!/usr/bin/python
 
+#SPIO_CSO  P9.17 => SS   purple
+#SPIO_DO   P9.21 => MISO green
+#SPIO_D1   P9.18 => MOSI yellow
+#SPIO_SCLK P9.22 => SCK  blue
+
+#DGND gnd                gray
+#3V3                     orange
+
+#OM SPI TE ENABLEN
+#config-pin P9.20 spi
+#en da me alle pins
+
+
+
 from Adafruit_BBIO.SPI import SPI
 
 import Adafruit_BBIO.GPIO as GPIO
