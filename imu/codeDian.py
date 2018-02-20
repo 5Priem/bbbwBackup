@@ -24,8 +24,11 @@ try:
                 angle=(res1[0]<<8)|res1[1]#merge leftbyte and rightbyte
                 angle1=angle&0x3FFF#move the first two bits
                 angle2=float(angle1)/16363*360
-                print("data is")
-                print(angle2)
+		print("res    is", str(res))
+		print("res1   is", str(res1))
+		print("angle  is", str(angle))
+                print("angle2 is", str(angle2))
+                
                 time.sleep(.25)
 except KeyboardInterrupt:
         spi.close()
