@@ -69,5 +69,4 @@ while True:
         angle1=angle&0x3FFF#move the first two bits
         angle2=float(angle1)/16363*360
         print("Angle is: "+str(angle2))
-        #print(angle2)
-	time.sleep(0.1)
+        time.sleep(0.1)
