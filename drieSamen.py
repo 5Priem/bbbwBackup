@@ -57,17 +57,17 @@ while True:
 	#print("ctr: %s angle: %s duty: %s"%(ctr,angle,duty))
 	if ctr >= 179:
 		ctr=1
-	time.sleep(0.1)
+	#time.sleep(0.1)
 
 	valueHeelL=adc.read(heelL)
 	print("heelL: "+ str(valueHeelL))
-	time.sleep(0.1)
+	#time.sleep(0.1)
 	
 	res = spi.xfer2([0xFFFF,0xFFFF])#deliver two bytes
         res1 = spi.readbytes(2)
         angle=(res1[0]<<8)|res1[1]#merge leftbyte and rightbyte
         angle1=angle&0x3FFF#move the first two bits
         angle2=float(angle1)/16363*360
-        print("Angle is: "+angle2)
+        print("Angle is: "+str(angle2))
         #print(angle2)
 	time.sleep(0.1)
