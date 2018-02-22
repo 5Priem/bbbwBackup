@@ -20,7 +20,7 @@ spi.open(0,0)#open
 try:
 	while True:
                 res = spi.xfer2([0xFFFF,0xFFFF])#deliver two bytes
-		spi.cshigh=False
+		#spi.cshigh=False
 
                 res1 = spi.readbytes(10)
                 angle=(res1[0]<<8)|res1[1]#merge leftbyte and rightbyte
@@ -32,7 +32,7 @@ try:
                 print("angle2 is", str(angle2))
                 
                 time.sleep(.25)
-		spi.cshigh=True
+		#spi.cshigh=True
 
 except KeyboardInterrupt:
         spi.close()
