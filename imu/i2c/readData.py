@@ -1,3 +1,5 @@
+#Library from:
+#https://github.com/boyaki-machine/MPU-9250/blob/master/mpu9250.py
 import mpu9250
 import time
 mp = mpu9250.SL_MPU9250(0x68,2)
