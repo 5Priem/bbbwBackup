@@ -34,7 +34,7 @@ try:
 	while True:
                 res = spi.xfer2([0xFFFF,0xFFFF])#deliver two bytes
 
-                res1 = spi.readbytes(2)
+                res1 = spi.readbytes(2)#Read 2 bytes
                 angle=(res1[0]<<8)|res1[1]#merge leftbyte and rightbyte
                 angle1=angle&0x3FFF#move the first two bits
                 angle2=float(angle1)/16363*360

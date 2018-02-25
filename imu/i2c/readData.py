@@ -14,7 +14,7 @@ try:
 	mp1 = mpu9250.SL_MPU9250(0x68,2)
 	mp2 = mpu9250.SL_MPU9250(0x69,2)
 except:
-	print("Import fail")
+	print("IMU's : Failed to import or execute mpu9250 library, IMU is probably not connected rightly")
 while True:
 	try:
 		ax1, ay1, az1 = mp1.getAccel()
