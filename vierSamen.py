@@ -20,6 +20,13 @@
 # config-pin P9.20 spi
 # en da me alle pins
 
+# IMU's: (MPU9250)
+# SDA - SDA
+# SCL - SCL
+# 3.3V - VDD
+# GND - GND
+# Pull up resistor to VDD for each IMU (I used 10k)
+
 
 import Adafruit_BBIO.ADC as adc
 import Adafruit_BBIO.PWM as pwm
@@ -27,16 +34,19 @@ from Adafruit_BBIO.SPI import SPI
 import time
 import mpu9250
 
+#Servo
 servopin = "P9_14"
 dutyMin = 3
 dutyMax = 14.5
 dutySpan = dutyMax-dutyMin
 pwm.start(servopin,5, 60.0, 1)
 
+#Insole
 adc.setup()
 heelR = "P9_40"
 heelL = "P9_39"
 
+#Encoder
 spi=SPI(0,0)#4 busses, this is bus 0
 spi.msh=10000#Frequency
 spi.bpw=8#bits per word
@@ -44,18 +54,19 @@ spi.cshigh=False#true means you select the chip, depends on the chip, here low m
 spi.threewire=False#if it is true, you just read, otherwise you also send commands
 spi.lsbfirst=False#Least significant bit first (left)
 spi.open(0,0)#open
-
 # add an extra parameter 1 if servo doesn't turn, 1 changes polarity
 #PWM.start(channel, duty, freq, polarity), polarity is 0 by default
 ctr=1
 
+#IMU's
 try:
 	mp1 = mpu9250.SL_MPU9250(0x68,2)
 	mp2 = mpu9250.SL_MPU9250(0x69,2)
 except:
-	print("Import fail")
+	print("IMU's : Failed to import or execute mpu9250 library, IMU is probably not connected rightly")
 
 while True:
+	#Servo
 	ctr = ctr + 10
 	angle = ctr
 	angle_f = float(angle)
@@ -66,18 +77,21 @@ while True:
 		ctr=1
 	#time.sleep(0.1)
 
+	#Insole
 	valueHeelL=adc.read(heelL)
 	print("heelL: "+ str(valueHeelL))
 	#time.sleep(0.1)
 	
+	#Encoder
 	res = spi.xfer2([0xFFFF,0xFFFF])#deliver two bytes
-        res1 = spi.readbytes(2)
+        res1 = spi.readbytes(2)#Read 2 bytes
         angle=(res1[0]<<8)|res1[1]#merge leftbyte and rightbyte
         angle1=angle&0x3FFF#move the first two bits
         angle2=float(angle1)/16363*360
         print("Angle is: "+str(angle2))
 
 
+	#IMU's: MPU9250
 	try:
 		ax1, ay1, az1 = mp1.getAccel()
 		gx1, gy1, gz1 = mp1.getGyro()
