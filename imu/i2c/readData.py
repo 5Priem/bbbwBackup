@@ -1,5 +1,13 @@
 #Library from:
 #https://github.com/boyaki-machine/MPU-9250/blob/master/mpu9250.py
+
+#Connections:
+#SDA - SDA
+#SCL - SCL
+#3.3V - VDD
+#GND - GND
+#Pull up resistor to VDD for each IMU (I used 10k)
+
 import mpu9250
 import time
 try:
