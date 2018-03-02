@@ -2,7 +2,7 @@ import Adafruit_BBIO.GPIO as GPIO
 import mpu9250
 import time
 
-mp=mpu9250.SL_MPU9250(Ox68, 2)
+mp=mpu9250.SL_MPU9250(0x68, 2)
 adPin="P8_10"
 adPin1="P8_9"
 
