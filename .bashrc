@@ -18,4 +18,5 @@
 # alias mv='mv -i'
 
 alias bbbw='cd /home/debian/Desktop/bbbw'
+bind 'set completion-ignore-case on'
 alias iscd='i2cdetect -y -r 2'
