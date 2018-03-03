@@ -1,7 +1,7 @@
 #!/usr/bin/python -u
 # -*- coding: utf-8 -*-
 
-import smbus
+import smbus2
 import time
 
 # A class (python2) that acquires data from I2C from Strawberry Linux's "MPU-9250"
@@ -44,7 +44,7 @@ class SL_MPU9250:
     def __init__(self, address, channel):
         self.address    = address
         self.channel    = channel
-        self.bus        = smbus.SMBus(2)
+        self.bus        = smbus2.SMBus(2)
         self.addrAK8963 = 0x0C
 
         # Sensor initialization
