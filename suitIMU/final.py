@@ -4,7 +4,10 @@ import time
 import os
 
 #*********SETUP*********#
-mp=mpu9250.SL_MPU9250(0x68, 2)
+try:
+	mp=mpu9250.SL_MPU9250(0x68, 2)
+except:
+	print("First IMU (in Setup) not found")
 footLeft         = "P8_7"
 footRight        = "P8_8"
 ankleLeft        = "P8_9"
@@ -287,8 +290,8 @@ while True:
         data = open(fileName + '.txt', 'a+')
         data.write("Head,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
         resetValues()
+    	data.close()
     except:
         print("Head failed to connect")
-    data.close()
 
 GPIO.cleanup()
