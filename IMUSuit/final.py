@@ -50,8 +50,8 @@ GPIO.setup(head, GPIO.OUT)
 
 fileName = "dataIMUSuit"
 
+print("Initialisation finished, gonna write to" + fileName + "and start reading now")
 
-#*********LOOP*********#
 def resetValues():
     ax=0
     ax=0
@@ -60,6 +60,7 @@ def resetValues():
     gy=0
     gz=0
 #Misschien overal ook mp=mpu9250.SL_MPU9250(Ox68, 2) schrijven, kweni of het nodig is
+#*********LOOP*********#
 while True:
     #*****Left foot*****#
     GPIO.output(head, GPIO.LOW)
