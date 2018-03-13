@@ -63,175 +63,232 @@ def resetValues():
 #*********LOOP*********#
 while True:
     #*****Left foot*****#
-    GPIO.output(head, GPIO.LOW)
-    GPIO.output(footLeft, GPIO.HIGH)
-    ax, ay, az = mp.getAccel()
-    gx, gy, gz = mp.getGyro()
-    data = open(fileName + '.txt', 'a+')
-    data.write("Left foot,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
-    resetValues()
+    try:
+        GPIO.output(head, GPIO.LOW)
+        GPIO.output(footLeft, GPIO.HIGH)
+        ax, ay, az = mp.getAccel()
+        gx, gy, gz = mp.getGyro()
+        data = open(fileName + '.txt', 'a+')
+        data.write("Left foot,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
+        resetValues()
+    except:
+        print("Left foot failed to connect")
 
     #*****Right foot*****#
-    GPIO.output(footLeft, GPIO.LOW)
-    GPIO.output(footRight, GPIO.HIGH)
-    ax, ay, az = mp.getAccel()
-    gx, gy, gz = mp.getGyro()
-    data = open(fileName + '.txt', 'a+')
-    data.write("Right foot,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
-    resetValues()
+    try:
+        GPIO.output(footLeft, GPIO.LOW)
+        GPIO.output(footRight, GPIO.HIGH)
+        ax, ay, az = mp.getAccel()
+        gx, gy, gz = mp.getGyro()
+        data = open(fileName + '.txt', 'a+')
+        data.write("Right foot,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
+        resetValues()
+    except:
+        print("Right foot failed to connect")
 
     #*****Left ankle*****#
-    GPIO.output(footRight, GPIO.LOW)
-    GPIO.output(ankleLeft, GPIO.HIGH)
-    ax, ay, az = mp.getAccel()
-    gx, gy, gz = mp.getGyro()
-    data = open(fileName + '.txt', 'a+')
-    data.write("Left ankle,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
-    resetValues()
+    try:
+        GPIO.output(footRight, GPIO.LOW)
+        GPIO.output(ankleLeft, GPIO.HIGH)
+        ax, ay, az = mp.getAccel()
+        gx, gy, gz = mp.getGyro()
+        data = open(fileName + '.txt', 'a+')
+        data.write("Left ankle,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
+        resetValues()
+    except:
+        print("Left ankle failed to connect")
 
     #****Right ankle*****#
-    GPIO.output(ankleLeft, GPIO.LOW)
-    GPIO.output(ankleRight, GPIO.HIGH)
-    ax, ay, az = mp.getAccel()
-    gx, gy, gz = mp.getGyro()
-    data = open(fileName + '.txt', 'a+')
-    data.write("Right ankle,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
-    resetValues()
+    try:
+        GPIO.output(ankleLeft, GPIO.LOW)
+        GPIO.output(ankleRight, GPIO.HIGH)
+        ax, ay, az = mp.getAccel()
+        gx, gy, gz = mp.getGyro()
+        data = open(fileName + '.txt', 'a+')
+        data.write("Right ankle,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
+        resetValues()
+    except:
+        print("Right ankle failed to connect")
 
     #*****Left quadriceps*****#
-    GPIO.output(ankleRight, GPIO.LOW)
-    GPIO.output(quadricepsLeft, GPIO.HIGH)
-    ax, ay, az = mp.getAccel()
-    gx, gy, gz = mp.getGyro()
-    data = open(fileName + '.txt', 'a+')
-    data.write("Left quadriceps,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
-    resetValues()
+    try:
+        GPIO.output(ankleRight, GPIO.LOW)
+        GPIO.output(quadricepsLeft, GPIO.HIGH)
+        ax, ay, az = mp.getAccel()
+        gx, gy, gz = mp.getGyro()
+        data = open(fileName + '.txt', 'a+')
+        data.write("Left quadriceps,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
+        resetValues()
+    except:
+        print("Left quadriceps failed to connect")
 
     #*****Right quadriceps*****#
-    GPIO.output(quadricepsLeft, GPIO.LOW)
-    GPIO.output(quadricepsRight, GPIO.HIGH)
-    ax, ay, az = mp.getAccel()
-    gx, gy, gz = mp.getGyro()
-    data = open(fileName + '.txt', 'a+')
-    data.write("Right quadriceps,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
-    resetValues()
+    try:
+        GPIO.output(quadricepsLeft, GPIO.LOW)
+        GPIO.output(quadricepsRight, GPIO.HIGH)
+        ax, ay, az = mp.getAccel()
+        gx, gy, gz = mp.getGyro()
+        data = open(fileName + '.txt', 'a+')
+        data.write("Right quadriceps,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
+        resetValues()
+    except:
+        print("Right quadriceps failed to connect")
 
     #*****Left hand*****#
-    GPIO.output(quadricepsRight, GPIO.LOW)
-    GPIO.output(handLeft, GPIO.HIGH)
-    ax, ay, az = mp.getAccel()
-    gx, gy, gz = mp.getGyro()
-    data = open(fileName + '.txt', 'a+')
-    data.write("Left hand,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
-    resetValues()
+    try:
+        GPIO.output(quadricepsRight, GPIO.LOW)
+        GPIO.output(handLeft, GPIO.HIGH)
+        ax, ay, az = mp.getAccel()
+        gx, gy, gz = mp.getGyro()
+        data = open(fileName + '.txt', 'a+')
+        data.write("Left hand,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
+        resetValues()
+    except:
+        print("Left hand failed to connect")
 
     #*****Right hand*****#
-    GPIO.output(handLeft, GPIO.LOW)
-    GPIO.output(handRight, GPIO.HIGH)
-    ax, ay, az = mp.getAccel()
-    gx, gy, gz = mp.getGyro()
-    data = open(fileName + '.txt', 'a+')
-    data.write("Right hand,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
-    resetValues()
+    try:
+        GPIO.output(handLeft, GPIO.LOW)
+        GPIO.output(handRight, GPIO.HIGH)
+        ax, ay, az = mp.getAccel()
+        gx, gy, gz = mp.getGyro()
+        data = open(fileName + '.txt', 'a+')
+        data.write("Right hand,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
+        resetValues()
+    except:
+        print("Right hand failed to connect")
 
     #*****Left wrist*****#
-    GPIO.output(handRight, GPIO.LOW)
-    GPIO.output(wristLeft, GPIO.HIGH)
-    ax, ay, az = mp.getAccel()
-    gx, gy, gz = mp.getGyro()
-    data = open(fileName + '.txt', 'a+')
-    data.write("Left wrist,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
-    resetValues()
+    try:
+        GPIO.output(handRight, GPIO.LOW)
+        GPIO.output(wristLeft, GPIO.HIGH)
+        ax, ay, az = mp.getAccel()
+        gx, gy, gz = mp.getGyro()
+        data = open(fileName + '.txt', 'a+')
+        data.write("Left wrist,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
+        resetValues()
+    except:
+        print("Left wrist failed to connect")
 
     #*****Right wrist*****#
-    GPIO.output(wristLeft, GPIO.LOW)
-    GPIO.output(wristRight, GPIO.HIGH)
-    ax, ay, az = mp.getAccel()
-    gx, gy, gz = mp.getGyro()
-    data = open(fileName + '.txt', 'a+')
-    data.write("Right wrist,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
-    resetValues()
+    try:
+        GPIO.output(wristLeft, GPIO.LOW)
+        GPIO.output(wristRight, GPIO.HIGH)
+        ax, ay, az = mp.getAccel()
+        gx, gy, gz = mp.getGyro()
+        data = open(fileName + '.txt', 'a+')
+        data.write("Right wrist,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
+        resetValues()
+    except:
+        print("Right wrist failed to connect")
 
     #*****Left biceps*****#
-    GPIO.output(wristRight, GPIO.LOW)
-    GPIO.output(bicepsLeft, GPIO.HIGH)
-    ax, ay, az = mp.getAccel()
-    gx, gy, gz = mp.getGyro()
-    data = open(fileName + '.txt', 'a+')
-    data.write("Left biceps,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
-    resetValues()
+    try:
+        GPIO.output(wristRight, GPIO.LOW)
+        GPIO.output(bicepsLeft, GPIO.HIGH)
+        ax, ay, az = mp.getAccel()
+        gx, gy, gz = mp.getGyro()
+        data = open(fileName + '.txt', 'a+')
+        data.write("Left biceps,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
+        resetValues()
+    except:
+        print("Left biceps failed to connect")
 
     #*****Right biceps*****#
-    GPIO.output(bicepsLeft, GPIO.LOW)
-    GPIO.output(bicepsRight, GPIO.HIGH)
-    ax, ay, az = mp.getAccel()
-    gx, gy, gz = mp.getGyro()
-    data = open(fileName + '.txt', 'a+')
-    data.write("Right biceps,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
-    resetValues()
+    try:
+        GPIO.output(bicepsLeft, GPIO.LOW)
+        GPIO.output(bicepsRight, GPIO.HIGH)
+        ax, ay, az = mp.getAccel()
+        gx, gy, gz = mp.getGyro()
+        data = open(fileName + '.txt', 'a+')
+        data.write("Right biceps,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
+        resetValues()
+    except:
+        print("Right biceps failed to connect")
 
     #*****Back left*****#
-    GPIO.output(bicepsRight, GPIO.LOW)
-    GPIO.output(backLeft, GPIO.HIGH)
-    ax, ay, az = mp.getAccel()
-    gx, gy, gz = mp.getGyro()
-    data = open(fileName + '.txt', 'a+')
-    data.write("Back left,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
-    resetValues()
+    try:
+        GPIO.output(bicepsRight, GPIO.LOW)
+        GPIO.output(backLeft, GPIO.HIGH)
+        ax, ay, az = mp.getAccel()
+        gx, gy, gz = mp.getGyro()
+        data = open(fileName + '.txt', 'a+')
+        data.write("Back left,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
+        resetValues()
+    except:
+        print("Back left failed to connect")
 
     #*****Back right*****#
-    GPIO.output(backLeft, GPIO.LOW)
-    GPIO.output(backRight, GPIO.HIGH)
-    ax, ay, az = mp.getAccel()
-    gx, gy, gz = mp.getGyro()
-    data = open(fileName + '.txt', 'a+')
-    data.write("Back right,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
-    resetValues()
+    try:
+        GPIO.output(backLeft, GPIO.LOW)
+        GPIO.output(backRight, GPIO.HIGH)
+        ax, ay, az = mp.getAccel()
+        gx, gy, gz = mp.getGyro()
+        data = open(fileName + '.txt', 'a+')
+        data.write("Back right,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
+        resetValues()
+    except:
+        print("Back right failed to connect")
 
     #*****Back pelvis*****#
-    GPIO.output(backRight, GPIO.LOW)
-    GPIO.output(backPelvis, GPIO.HIGH)
-    ax, ay, az = mp.getAccel()
-    gx, gy, gz = mp.getGyro()
-    data = open(fileName + '.txt', 'a+')
-    data.write("Back pelvis,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
-    resetValues()
+    try:
+        GPIO.output(backRight, GPIO.LOW)
+        GPIO.output(backPelvis, GPIO.HIGH)
+        ax, ay, az = mp.getAccel()
+        gx, gy, gz = mp.getGyro()
+        data = open(fileName + '.txt', 'a+')
+        data.write("Back pelvis,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
+        resetValues()
+    except:
+        print("Back pelvis failed to connect")
 
     #*****Front sternum*****#
-    GPIO.output(backPelvis, GPIO.LOW)
-    GPIO.output(frontSternum, GPIO.HIGH)
-    ax, ay, az = mp.getAccel()
-    gx, gy, gz = mp.getGyro()
-    data = open(fileName + '.txt', 'a+')
-    data.write("Front sternum,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
-    resetValues()
+    try:
+        GPIO.output(backPelvis, GPIO.LOW)
+        GPIO.output(frontSternum, GPIO.HIGH)
+        ax, ay, az = mp.getAccel()
+        gx, gy, gz = mp.getGyro()
+        data = open(fileName + '.txt', 'a+')
+        data.write("Front sternum,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
+        resetValues()
+    except:
+        print("Front sternum failed to connect")
 
     #*****Front bellybutton*****#
-    GPIO.output(frontSternum, GPIO.LOW)
-    GPIO.output(frontBellybutton, GPIO.HIGH)
-    ax, ay, az = mp.getAccel()
-    gx, gy, gz = mp.getGyro()
-    data = open(fileName + '.txt', 'a+')
-    data.write("Front bellybutton,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
-    resetValues()
+    try:
+        GPIO.output(frontSternum, GPIO.LOW)
+        GPIO.output(frontBellybutton, GPIO.HIGH)
+        ax, ay, az = mp.getAccel()
+        gx, gy, gz = mp.getGyro()
+        data = open(fileName + '.txt', 'a+')
+        data.write("Front bellybutton,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
+        resetValues()
+    except:
+        print("Front bellybutton failed to connect")
 
     #*****Front pelvis*****#
-    GPIO.output(frontBellybutton, GPIO.LOW)
-    GPIO.output(frontPelvis, GPIO.HIGH)
-    ax, ay, az = mp.getAccel()
-    gx, gy, gz = mp.getGyro()
-    data = open(fileName + '.txt', 'a+')
-    data.write("Front pelvis,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
-    resetValues()
+    try:
+        GPIO.output(frontBellybutton, GPIO.LOW)
+        GPIO.output(frontPelvis, GPIO.HIGH)
+        ax, ay, az = mp.getAccel()
+        gx, gy, gz = mp.getGyro()
+        data = open(fileName + '.txt', 'a+')
+        data.write("Front pelvis,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
+        resetValues()
+    except:
+        print("Front pelvis failed to connect")
 
     #*****Head*****#
-    GPIO.output(frontPelvis, GPIO.LOW)
-    GPIO.output(head, GPIO.HIGH)
-    ax, ay, az = mp.getAccel()
-    gx, gy, gz = mp.getGyro()
-    data = open(fileName + '.txt', 'a+')
-    data.write("Head,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
-    resetValues()
+    try:
+        GPIO.output(frontPelvis, GPIO.LOW)
+        GPIO.output(head, GPIO.HIGH)
+        ax, ay, az = mp.getAccel()
+        gx, gy, gz = mp.getGyro()
+        data = open(fileName + '.txt', 'a+')
+        data.write("Head,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
+        resetValues()
+    except:
+        print("Head failed to connect")
     data.close()
 
 GPIO.cleanup()
