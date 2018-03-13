@@ -25,7 +25,7 @@ while True:
 GPIO.output(adPin, GPIO.HIGH)
 GPIO.output(adPin1, GPIO.LOW)
 timeout= time.time()+5
-mp=mpu9250.SL_MPU9250(0x68, 2)
+#mp=mpu9250.SL_MPU9250(0x68, 2)
 print("ANDERE********************************************")
 time.sleep(2)
 while True:

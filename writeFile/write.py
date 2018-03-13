@@ -2,9 +2,7 @@ import os
 
 x=1
 name = "fileNaam"
-#final_name = os.path.join('C:', 'Users', 'boktor', 'Desktop', name + '.txt')
-while x < 94:
-	data = open(name + '.txt', 'a+')
-	data.write(str(x) + '\n')
-	x = x + 1
+
+data = open(name+ '.txt', 'a+')
+data.write(str(x) + '\n')
 data.close()
