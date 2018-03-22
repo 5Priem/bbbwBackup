@@ -5,8 +5,8 @@ from Adafruit_BBIO.SPI import SPI
 import Adafruit_BBIO.GPIO as GPIO
 import time
 
-spi=SPI(0,0)#4 busses, this is bus 0
-spi.msh=10000#Frequency
+spi=SPI(1,1)#4 busses, this is bus 0
+spi.msh=500000#Frequency
 spi.bpw=8#bits per word
 spi.cshigh=True#true means you select the chip, depends on the chip, here low means active, normally Low for IMU
 spi.threewire=False#if it is true, you just read, otherwise you also send commands
