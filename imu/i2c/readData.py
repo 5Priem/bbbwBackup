@@ -20,7 +20,7 @@ except:
 fileName = "sampleData"
 
 data = open(fileName+ '.txt', 'a+')
-data.write("CSV format: Accelerometer x value, acclerometer y value, accelerometer z value, gyroscope x value, gyroscope y value, gyroscope z value")
+data.write("CSV format: Accelerometer x value, acclerometer y value, accelerometer z value, gyroscope x value, gyroscope y value, gyroscope z value"+'\n')
 data.close()
 while True:
 	try:
@@ -35,7 +35,7 @@ while True:
 		print "Gy1: ",gy1
 		print "Gz1: ",gz1
 		data = open(fileName+ '.txt', 'a+')
-		data.write(str(ax1)+','+str(ay1)+','+str(az1)+','+str(gx1)+','+str(gy1)+','+str(gz1)+','+'\n')
+		data.write(str(ax1)+','+str(ay1)+','+str(az1)+','+str(gx1)+','+str(gy1)+','+str(gz1)+'\n')
 		data.close()
 
 
