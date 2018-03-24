@@ -19,14 +19,13 @@ except:
 	print("IMU's : Failed to import or execute mpu9250 library, IMU is probably not connected rightly")
 fileName = "sampleData"
 sampleFreq = 100
-sampleTime = 5
-timeout = time.time() + sampleTime # 5 seconds
+sampleTime = 1
 
 data = open(fileName+ '.txt', 'a+')
 data.write("CSV format: Accelerometer x value, acclerometer y value, accelerometer z value, gyroscope x value, gyroscope y value, gyroscope z value"+'\n')
 data.write("Sample frequency: " + str(sampleFreq)+"Hz"+'\n')
 data.write("Sample time: " + str(sampleTime)+"sec"+'\n')
-data.close()
+timeout = time.time() + sampleTime # 5 seconds
 while True:
 	try:
 		ax1, ay1, az1 = mp1.getAccel()
@@ -39,13 +38,11 @@ while True:
 		print "Gx1: ",gx1
 		print "Gy1: ",gy1
 		print "Gz1: ",gz1
-		data = open(fileName+ '.txt', 'a+')
 		data.write(str(ax1)+','+str(ay1)+','+str(az1)+','+str(gx1)+','+str(gy1)+','+str(gz1)+'\n')
-		data.close()
-		time.sleep(1/sampleFreq)
+		time.sleep(float(1)/sampleFreq)
 		if time.time()>timeout:
+			data.close()
 			break
-
 
 	except:
 		print("Finito1")
