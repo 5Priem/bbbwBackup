@@ -25,21 +25,24 @@ data = open(fileName+ '.txt', 'a+')
 data.write("CSV format: Accelerometer x value, acclerometer y value, accelerometer z value, gyroscope x value, gyroscope y value, gyroscope z value"+'\n')
 data.write("Sample frequency: " + str(sampleFreq)+"Hz"+'\n')
 data.write("Sample time: " + str(sampleTime)+"sec"+'\n')
-timeout = time.time() + sampleTime # 5 seconds
+ctr = 0
+timeout = time.time() + 10
+timeout1 = time.time()+ 1
 while True:
 	try:
-		ax1, ay1, az1 = mp1.getAccel()
-		gx1, gy1, gz1 = mp1.getGyro()
-		print "Eerste IMU values:"
-		print "Ax1: ",ax1
-		print "Ay1: ",ay1
-		print "Az1: ",az1
+		#ax1, ay1, az1 = mp1.getAccel()
+		#gx1, gy1, gz1 = mp1.getGyro()
+		#print "Eerste IMU values:"
+		#print "Ax1: ",ax1
+		#print "Ay1: ",ay1
+		#print "Az1: ",az1
 
-		print "Gx1: ",gx1
-		print "Gy1: ",gy1
-		print "Gz1: ",gz1
-		data.write(str(ax1)+','+str(ay1)+','+str(az1)+','+str(gx1)+','+str(gy1)+','+str(gz1)+'\n')
+		#print "Gx1: ",gx1
+		#print "Gy1: ",gy1
+		#print "Gz1: ",gz1
+		#data.write(str(ax1)+','+str(ay1)+','+str(az1)+','+str(gx1)+','+str(gy1)+','+str(gz1)+'\n')
 		time.sleep(float(1)/sampleFreq)
+
 		if time.time()>timeout:
 			data.close()
 			break
