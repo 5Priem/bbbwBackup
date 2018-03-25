@@ -32,6 +32,9 @@ def resetValues():
     gz=0
     gy=0
     gz=0
+
+data = open(fileName + '.txt', 'a+')
+
 #Misschien overal ook mp=mpu9250.SL_MPU9250(Ox68, 2) schrijven, kweni of het nodig is
 #*********LOOP*********#
 while True:
@@ -41,7 +44,6 @@ while True:
         GPIO.output(footLeft, GPIO.HIGH)
         ax, ay, az = mp.getAccel()
         gx, gy, gz = mp.getGyro()
-        data = open(fileName + '.txt', 'a+')
         data.write("Left foot,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
         resetValues()
     except:
@@ -53,7 +55,6 @@ while True:
         GPIO.output(footRight, GPIO.HIGH)
         ax, ay, az = mp.getAccel()
         gx, gy, gz = mp.getGyro()
-        data = open(fileName + '.txt', 'a+')
         data.write("Right foot,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
         resetValues()
     except:
@@ -65,11 +66,12 @@ while True:
         GPIO.output(ankleLeft, GPIO.HIGH)
         ax, ay, az = mp.getAccel()
         gx, gy, gz = mp.getGyro()
-        data = open(fileName + '.txt', 'a+')
         data.write("Left ankle,"+str(ax)+','+str(ay)+','+str(az)+','+str(gx)+','+str(gy)+','+str(gz) + '\n')
         resetValues()
     except:
         print("Left ankle failed to connect")
+
+	hey = input("give input")
 
 data.close()
 GPIO.cleanup()

@@ -9,8 +9,12 @@
 #Pull up resistor to VDD for each IMU (I used 10k)
 
 import mpu9250
+import Adafruit_BBIO.GPIO as GPIO
 import time
 import os
+
+GPIO.setup("P8_8",GPIO.OUT)
+GPIO.output("P8_8",GPIO.LOW)
 
 try:
 	mp1 = mpu9250.SL_MPU9250(0x68,2)
@@ -19,7 +23,7 @@ except:
 	print("IMU's : Failed to import or execute mpu9250 library, IMU is probably not connected rightly")
 fileName = "sampleData"
 sampleFreq = 100
-sampleTime = 1
+sampleTime = 100
 
 data = open(fileName+ '.txt', 'a+')
 data.write("CSV format: Accelerometer x value, acclerometer y value, accelerometer z value, gyroscope x value, gyroscope y value, gyroscope z value"+'\n')
