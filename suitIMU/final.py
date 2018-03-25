@@ -32,28 +32,28 @@ head             = "P9_41"
 print("Initialising GPIO's...")
 GPIO.setup(footLeft, GPIO.OUT)
 GPIO.setup(footRight, GPIO.OUT)
-GPIO.setup(ankleLeft, GPIO.OUT)
-GPIO.setup(ankleRight, GPIO.OUT)
-GPIO.setup(quadricepsLeft, GPIO.OUT)
-GPIO.setup(quadricepsRight, GPIO.OUT)
-GPIO.setup(handLeft, GPIO.OUT)
-GPIO.setup(handRight, GPIO.OUT)
-GPIO.setup(wristLeft, GPIO.OUT)
-GPIO.setup(wristRight, GPIO.OUT)
-GPIO.setup(bicepsLeft, GPIO.OUT)
-GPIO.setup(bicepsRight, GPIO.OUT)
-
-GPIO.setup(backLeft, GPIO.OUT)
-GPIO.setup(backRight, GPIO.OUT)
-GPIO.setup(backPelvis, GPIO.OUT)
-GPIO.setup(frontSternum, GPIO.OUT)
-GPIO.setup(frontBellybutton, GPIO.OUT)
-GPIO.setup(frontPelvis, GPIO.OUT)
-GPIO.setup(head, GPIO.OUT)
+#GPIO.setup(ankleLeft, GPIO.OUT)
+#GPIO.setup(ankleRight, GPIO.OUT)
+#GPIO.setup(quadricepsLeft, GPIO.OUT)
+#GPIO.setup(quadricepsRight, GPIO.OUT)
+#GPIO.setup(handLeft, GPIO.OUT)
+#GPIO.setup(handRight, GPIO.OUT)
+#GPIO.setup(wristLeft, GPIO.OUT)
+#GPIO.setup(wristRight, GPIO.OUT)
+#GPIO.setup(bicepsLeft, GPIO.OUT)
+#GPIO.setup(bicepsRight, GPIO.OUT)
+#
+#GPIO.setup(backLeft, GPIO.OUT)
+#GPIO.setup(backRight, GPIO.OUT)
+#GPIO.setup(backPelvis, GPIO.OUT)
+#GPIO.setup(frontSternum, GPIO.OUT)
+#GPIO.setup(frontBellybutton, GPIO.OUT)
+#GPIO.setup(frontPelvis, GPIO.OUT)
+#GPIO.setup(head, GPIO.OUT)
 
 fileName = "dataIMUSuit"
 
-print("Initialisation finished, gonna write to" + fileName + "and start reading now")
+print("Initialisation finished, gonna write to " + fileName + " and start reading now")
 
 def resetValues():
     ax=0
