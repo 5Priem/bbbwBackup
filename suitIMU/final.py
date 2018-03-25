@@ -63,6 +63,7 @@ def resetValues():
     gy=0
     gz=0
 #Misschien overal ook mp=mpu9250.SL_MPU9250(Ox68, 2) schrijven, kweni of het nodig is
+#Moet dus NIET, check test.py, ook in deze folder
 #*********LOOP*********#
 while True:
     #*****Left foot*****#

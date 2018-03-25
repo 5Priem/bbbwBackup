@@ -15,6 +15,10 @@ import os
 
 GPIO.setup("P8_8",GPIO.OUT)
 GPIO.output("P8_8",GPIO.LOW)
+GPIO.setup("P8_7",GPIO.OUT)
+GPIO.output("P8_7",GPIO.HIGH)
+GPIO.setup("P8_9",GPIO.OUT)
+GPIO.output("P8_9",GPIO.HIGH)
 
 try:
 	mp1 = mpu9250.SL_MPU9250(0x68,2)
