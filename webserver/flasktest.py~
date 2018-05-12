@@ -14,6 +14,8 @@ except:
 
 counter=5
 vaaar = "bijour"
+ax1, ay1, az1 = mp1.getAccel()
+ax1 = str(ax1)
 
 @app.route('/')
 def hello_world(ax1):
@@ -25,8 +27,6 @@ def varMeegeven(vaaar):
 
 @app.route('/test')
 def test():
-    ax1, ay1, az1 = mp1.getAccel()
-    ax1 = str(ax1)
     return render_template('index.html', ax1=ax1)
 
 

@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>
+testtitle
+</title>
+<meta http-equiv="refresh" content="1"/>
+</html>
+
+<body>
+<h1> Hallokkeeees dees is de variabele da ge meegeeft: {{vaaar}} </h1>
+<h2> bonjour: waarde van accelerometer: {{ax1}} </h2>
+
+jfeifjeiheyyyyyyy daaar
+<a href ="test.txt" download>
+<p> klik hier en krijg een snoepje </p>
+</a>
+<p id=cpuload> hier moet iets veranderen </p>
+<script>
+
+function update_values() {
+$SCRIPT_ROOT = {{ request.script_root|tojson|safe }};
+$.getJSON($SCRIPT_ROOT+"/_stuff",
+    function(data) {
+                $("#cpuload").text(data.cpu+" %")
+                });
+    }
+
+</script>
+
+</body>
+</html>
