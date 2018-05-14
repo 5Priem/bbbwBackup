@@ -6,22 +6,9 @@
 </head>
 <body>
 <script type="text/javascript">
-
-function update_values() {
-	T = {{ request.script_root|tojson|safe }};
-	T+"/_stuff",
-	                function(data) {
-				                    $("#cpuload").text(data.cpu+" %")
-							                        $("#ram").text(data.ram+" %")
-										                    $("#disk").text(data.disk+" %")
-												                    });
-	        }
-	            $.getJSON($SCRIPT_R
-	            $SCRIPT_R
-
 $(document).ready(function() {
 
-	var socket = io.connect('http://192.168.7.2');
+	var socket = io.connect('http://127.0.0.1:5000');
 
 	socket.on('connect', function() {
 		socket.send('User has connected!');

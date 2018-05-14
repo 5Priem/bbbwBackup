@@ -20,7 +20,7 @@ def suggestions():
     if text:
         r = requests.get('http://suggestqueries.google.com/complete/search?output=toolbar&hl=ru&q={}&gl=in'.format(text))
 
-        soup = BeautifulSoup("html5lib")
+        soup = BeautifulSoup(r.content, 'lxml')
 
         suggestions = soup.find_all('suggestion')
 
