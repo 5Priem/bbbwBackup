@@ -17,8 +17,7 @@ vaaar = "bijour"
 
 @app.route('/')
 def hello_world():
-    return "hey"
-    #return render_template('index.html')
+    return render_template('index.html')
 
 @app.route("/hello/<string:vaaar>/")
 def varMeegeven(vaaar):
@@ -35,4 +34,4 @@ def test():
 
 
 if __name__ == '__main__':
-	app.run(host='192.168.0.115')
+	app.run(host='127.0.0.1')
