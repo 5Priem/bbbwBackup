@@ -38,6 +38,8 @@ while True:
 		print "Gx1: ",gx1
 		print "Gy1: ",gy1
 		print "Gz1: ",gz1
+                #time.sleep(0.2)
+                print str(time.time())
 
 
 	except:

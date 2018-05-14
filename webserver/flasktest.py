@@ -16,7 +16,7 @@ counter=5
 vaaar = "bijour"
 
 @app.route('/')
-def hello_world(ax1):
+def hello_world():
     return render_template('index.html')
 
 @app.route("/hello/<string:vaaar>/")
@@ -25,8 +25,11 @@ def varMeegeven(vaaar):
 
 @app.route('/test')
 def test():
-    ax1, ay1, az1 = mp1.getAccel()
-    ax1 = str(ax1)
+    try:
+        ax1, ay1, az1 = mp1.getAccel()
+        ax1 = str(ax1)
+    except:
+        ax1="mpu value not found"
     return render_template('index.html', ax1=ax1)
 
 
