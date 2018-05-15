@@ -17,7 +17,7 @@ def add_numbers():
     ax1 = str(ax1)
     a = a+1#x#request.args.get('a', 0, type=int)
     b = 6#request.args.get('b', 0, type=int)
-    return jsonify(result="a") #+ b)
+    return jsonify(result=ax1) #+ b)
 
 @app.route('/')
 def index():

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# https://github.com/pallets/flask/tree/0.12.4/examples/jqueryexample
 from flask import Flask, jsonify, render_template, request
 import mpu9250
 app = Flask(__name__)
