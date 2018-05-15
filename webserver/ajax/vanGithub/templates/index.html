@@ -2,14 +2,18 @@
 {% block body %}
 <script type="text/javascript">
   
-  var myVar = setInterval(submit_form, 1000);
+  //var myVar = setInterval(submit_form, 1000);
   
   $(function() {
-    var submit_form = function(e) {
-      $.getJSON($SCRIPT_ROOT + '/_add_numbers', {
-        a: $('input[name="a"]').val(),
-        b: $('input[name="b"]').val()
-      }, function(data) {
+    var submit_form = 
+	    function(e) 
+    {
+      $.getJSON($SCRIPT_ROOT + '/_add_numbers', 
+	//{
+        //a: $('input[name="a"]').val(),
+        //b: $('input[name="b"]').val()
+      //},
+      function(data) {
         $('#result').text(data.result);
         $('input[name=a]').focus().select();
       });
@@ -17,7 +21,7 @@
     };
 
     $('a#calculate').bind('click', submit_form);
-    #window.setInterval(submit_form,1000);
+    window.setInterval(submit_form,1000);
 
     $('input[type=text]').bind('keydown', function(e) {
       if (e.keyCode == 13) {

@@ -1,10 +1,12 @@
 from flask import Flask, jsonify, render_template, request
 app = Flask(__name__)
 
+a = 4
 @app.route('/_add_numbers')
 def add_numbers():
-    a = request.args.get('a', 0, type=int)
-    b = request.args.get('b', 0, type=int)
+    global a
+    a = a+1#request.args.get('a', 0, type=int)
+    b = 5#request.args.get('b', 0, type=int)
     return jsonify(result=a + b)
 
 @app.route('/')

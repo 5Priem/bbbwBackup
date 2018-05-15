@@ -1,15 +1,23 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, jsonify, render_template, request
+import mpu9250
 app = Flask(__name__)
 
 a = 4
+try:
+        mp1 = mpu9250.SL_MPU9250(0x68,2)
+except:
+        print("IMU's : Failed to import or execute mpu9250 library, IMU is probably not connected rightly")
+
 
 @app.route('/_add_numbers')
 def add_numbers():
     global a
-    a = a + 1#request.args.get('a', 0, type=int)
+    ax1, ay1, az1 = mp1.getAccel()
+    ax1 = str(ax1)
+    a = a+1#x#request.args.get('a', 0, type=int)
     b = 6#request.args.get('b', 0, type=int)
-    return jsonify(result=a + b)
+    return jsonify(result="a") #+ b)
 
 @app.route('/')
 def index():
